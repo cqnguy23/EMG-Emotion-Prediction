@@ -10,7 +10,7 @@ https://www.youtube.com/watch?v=Cc9PWFPVIpw&feature=youtu.be
 
 ## Results:
 
-We were able to implement a prototype of the device that can predict three types of emotions: anger, happy and sad with up to 70% of accuracy. More details are included in the Documentation folder of the Github.
+We were able to implement a prototype of the device that can predict three types of emotions: anger, happy and sad with up to 70% of accuracy. More details are included in the Documentation folder of the repo.
 
 
 ## Overview Diagram:
