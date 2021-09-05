@@ -1,0 +1,6 @@
+framework module Pods_Senior_Design {
+  umbrella header "Pods-Senior Design-umbrella.h"
+
+  export *
+  module * { export * }
+}
