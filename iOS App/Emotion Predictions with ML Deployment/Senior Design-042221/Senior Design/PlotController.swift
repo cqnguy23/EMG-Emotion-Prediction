@@ -101,7 +101,7 @@ extension ViewController: CPTScatterPlotDataSource, CPTScatterPlotDelegate {
         graph.titleTextStyle = titleStyle
 
         //Set graph title
-        let title = "EMG Signals"
+        let title = "Senior Project"
         graph.title = title
         graph.titlePlotAreaFrameAnchor = .top
         graph.titleDisplacement = CGPoint(x: 0.0, y: 0.0)

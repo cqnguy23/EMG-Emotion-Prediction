@@ -121,7 +121,7 @@ extension ViewController: CBCentralManagerDelegate, CBPeripheralDelegate {
             //NSLog("Sensor 3: " + String(temp3))
         let elemSize = MemoryLayout<Float32>.size
         var bytes =  [UInt8](repeating: 0, count: elemSize)
-        if (inputData.count == 6144) {
+        if (inputData.count >= 6144) {
             inferenceML(inputData)
             inputData.removeFirst(600)
         }

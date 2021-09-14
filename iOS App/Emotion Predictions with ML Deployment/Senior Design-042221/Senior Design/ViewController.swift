@@ -23,9 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var imageLabel: UIImageView!
     @IBOutlet var statusLabel: UILabel!
-    @IBOutlet var happyLabel: UILabel!
-    @IBOutlet var sadLabel: UILabel!
-    @IBOutlet var angryLabel: UILabel!
+    @IBOutlet var probabilityLabel: UILabel!
     var plotDataOne = [Float32](repeating: 0.0, count: 980)
     var plotDataTwo = [Float32](repeating: 0.0, count: 980)
     var plotDataThree = [Float32](repeating: 0.0, count: 980)

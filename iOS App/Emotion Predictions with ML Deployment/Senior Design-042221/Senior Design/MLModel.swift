@@ -26,10 +26,12 @@ extension ViewController {
     
     func inferenceML(_ data: Data){
         do {
+            interpreter = try Interpreter(modelPath: self.modelPath)
+            try interpreter?.allocateTensors()
             try self.interpreter?.copy(data, toInputAt: 0)
             try self.interpreter?.invoke()
             let outputTensor = try self.interpreter?.output(at: 0)
-        
+            
             let outputSize = outputTensor?.shape.dimensions.reduce(1, {x, y in x * y})
             let results: [Float]
             switch outputTensor!.dataType {
@@ -48,7 +50,9 @@ extension ViewController {
                   print("Output tensor data type \(outputTensor!.dataType) is unsupported for this example app.")
                   return
                 }
-
+            
+        
+            
             guard let labelPath = Bundle.main.path(forResource: "labels", ofType: "txt") else { return }
             let fileContents = try String(contentsOfFile: labelPath)
             let labels = fileContents.components(separatedBy: "\n")
@@ -71,13 +75,7 @@ extension ViewController {
             }
             
             for i in labels.indices {
-                print("\(labels[i]): \(results[i])\n")
-            }
-
-            DispatchQueue.main.async() {
-                self.happyLabel.text = "Happy: \(results[0])"
-                self.sadLabel.text = "Sad: \(results[1])"
-                self.angryLabel.text = "Angry: \(results[2])"
+                print("\(labels[i]): \(results[i])")
             }
         }
         catch {
